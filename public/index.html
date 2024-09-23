@@ -16,35 +16,46 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="intro">
-            <!-- Add your picture here -->
-            <img src="your-picture.jpg" alt="Samia Nusrat" class="profile-picture">
-
-            <h1>Samia Nusrat</h1>
-            <p>Senior Computer Engineering Student</p>
-            <p>Email: <a href="mailto:samian@mun.ca">samian@mun.ca</a> | Phone: +1 709-219-5033</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/samianusrat789" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" class="social-icon"></a>
-                <a href="https://github.com/samia-nusrat" target="_blank"><img src="github-icon.png" alt="GitHub" class="social-icon"></a>
+    </header>
+    
+    <!-- Cover Section -->
+    <section class="cover-section">
+        <div class="cover-left">
+            <div class="intro">
+                <h1>Samia Nusrat</h1>
+                <p>Senior Computer Engineering Student</p>
+                <p>Email: <a href="mailto:samian@mun.ca">samian@mun.ca</a> | Phone: +1 709-219-5033</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/samianusrat789" target="_blank">
+                        <img src="linkedin-icon.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                    <a href="https://github.com/samia-nusrat" target="_blank">
+                        <img src="github-icon.png" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+        <div class="cover-right">
+            <img src="your-picture.jpg" alt="Samia Nusrat" class="profile-picture">
+        </div>
+    </section>
+    
+    <!-- Rest of your content -->
+    <section id="work">
+        <!-- Work experience content here -->
+    </section>
 
-    <!-- Work History Section (Tabs) -->
+
+
+
+        <!-- Work History Section (Tabs) -->
+        <!-- Work History Section (Vertical Timeline) -->
     <section id="work">
         <h2>Work Experience</h2>
-        <div class="tabs">
-            <div class="tab-buttons">
-                <button class="tab-button" onclick="showTab('sar')">Search and Rescue (SAR)</button>
-                <button class="tab-button active" onclick="showTab('angler')">Angler Solutions Inc.</button>
-                <button class="tab-button" onclick="showTab('nserc')">NSERC - Memorial University</button>
-                <button class="tab-button" onclick="showTab('atlantic')">Atlantic XL</button>
-                <button class="tab-button" onclick="showTab('marine')">Marine Institute-CIDS CUI Project</button>
-                <button class="tab-button" onclick="showTab('mun')">Memorial University</button>
-                <!-- Add more buttons as needed -->
-            </div>
-            <div class="tab-content">
-                <div id="sar" class="tab">
+        <div class="timeline">
+            <!-- SAR Experience (Left) -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
                     <h3>Search and Rescue (SAR) Data Analyst @ Work Package 3 (WP3)</h3>
                     <p>Aug 2024 - Current, St. John's, NL</p>
                     <ul>
@@ -53,7 +64,10 @@
                         <li>Analyzed and processed Search and Rescue (SAR) datasets to identify factors affecting SAR effectiveness in remote regions.</li>
                     </ul>
                 </div>
-                <div id="angler" class="tab" style="display: block;">
+            </div>
+            <!-- Angler Experience (Right) -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
                     <h3>Software Developer @ Angler Solutions Inc.</h3>
                     <p>Sept 2023 - Dec 2023, St. John’s, NL</p>
                     <ul>
@@ -63,7 +77,10 @@
                         <li>Troubleshot, debugged, and upgraded software, enhancing project efficiency by solving complex technical issues.</li>
                     </ul>
                 </div>
-                <div id="nserc" class="tab">
+            </div>
+            <!-- NSERC Experience (Left) -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
                     <h3>Data Science and Software Development Intern @ NSERC - Memorial University</h3>
                     <p>Jan 2023 - Apr 2023, St. John’s, NL</p>
                     <ul>
@@ -72,7 +89,10 @@
                         <li>Generated posterior probability maps using Python.</li>
                     </ul>
                 </div>
-                <div id="atlantic" class="tab">
+            </div>
+            <!-- Atlantic XL Experience (Right) -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
                     <h3>Telecommunications Design Intern @ Atlantic XL</h3>
                     <p>May 2022 - Sept 2022, St. John’s, NL</p>
                     <ul>
@@ -80,26 +100,13 @@
                         <li>Prepared meeting minutes and participated in workshops with companies such as ABB, Tampnet, and ExxonMobil.</li>
                     </ul>
                 </div>
-                <div id="marine" class="tab">
-                    <h3>Data Acquisition Engineering Intern @ Marine Institute-CIDS CUI Project</h3>
-                    <p>Sept 2021 - Dec 2021, St. John’s, NL</p>
-                    <ul>
-                        <li>Designed data acquisition systems using MATLAB and conducted corrosion under insulation (CUI) field testing, including data generation and analysis.</li>
-                        <li>Managed purchasing and project activities, such as procuring equipment and coordinating timelines, and created research presentations on CUI findings.</li>
-                    </ul>
-                </div>
-                <div id="mun" class="tab">
-                    <h3>Web Development and Research Co-op Student @ Memorial University</h3>
-                    <p>Jan 2021 - Apr 2021, St. John’s, NL</p>
-                    <ul>
-                        <li>Learned CSS and HTML through online courses to support web development tasks for the project.</li>
-                        <li>Conducted research and proposal writing.</li>
-                        <li>Updated datasets for the State-of-the-Art of Small-Scale Fisheries project.</li>
-                    </ul>
-                </div>
             </div>
+            <!-- Add more timeline items as needed -->
         </div>
     </section>
+
+
+
 
     <!-- Portfolio Section -->
     <section id="portfolio">

@@ -1,3 +1,178 @@
+/* Cover Section */
+.cover-section {
+    position: relative;
+    height: 500px;
+    display: flex;
+    overflow: hidden; /* Prevent overflow */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Diagonal cut */
+}
+
+.cover-left {
+    background-color: #0a192f;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%; /* Full height */
+}
+
+.cover-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%; /* Full height */
+    
+}
+
+.cover-right img {
+    width: 100%;
+    
+    height: auto; /* Maintain aspect ratio */
+}
+
+.intro {
+    text-align: center;
+    
+    color: #ccd6f6;
+    
+}
+
+.intro h1 {
+    font-size: 3rem;
+    margin: 0;
+    
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links img {
+    width: 40px;
+    margin: 0 10px;
+}
+
+.profile-picture {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color:#112240;
+    padding: 10px;
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Timeline item */
+.timeline-item {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Left side of the timeline */
+.timeline-item.left {
+    left: 0;
+    text-align: left;
+}
+
+/* Right side of the timeline */
+.timeline-item.right {
+    left: 50%;
+    text-align: right;
+}
+
+/* The content of each timeline item */
+.timeline-content {
+    padding: 20px;
+    background-color: #112240;
+    border-radius: 8px;
+    position: relative;
+    color: #ccd6f6;
+}
+
+/* The circle in the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #64ffda;
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+}
+
+/* Circle position for left timeline */
+.timeline-item.left::after {
+    right: -10px;
+}
+
+/* Circle position for right timeline */
+.timeline-item.right::after {
+    left: -10px;
+}
+
+/* The vertical line that connects the timeline items */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #64ffda;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 0;
+}
+
+/* Styling for the heading */
+.timeline-item h3 {
+    color: #64ffda;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* List styles inside timeline content */
+.timeline-item ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    color: #ccd6f6;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        padding-left: 25px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 10px;
+    }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -154,13 +329,7 @@ nav ul li a {
 .show-more:hover {
     background-color: #ccd6f6;
 }
-.profile-picture {
-    width: 150px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Optional: makes the image circular */
-    display: block;
-    margin: 0 auto; /* Center align */
-}
+
 
 /* Contact Form */
 form {
@@ -198,6 +367,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #ccd6f6;
 }
+
 /* Skills Section */
 #skills {
     background-color: #112240;
@@ -211,7 +381,6 @@ button[type="submit"]:hover {
     gap: 30px;  /* Increased gap for more space between skills */
     justify-items: center;
 }
-
 
 .skill {
     text-align: center;
@@ -234,3 +403,9 @@ button[type="submit"]:hover {
     color: #64ffda;
     margin: 0;
 }
+.profile-picture {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    /* border-radius: 50%; Remove this line */
+}
+
