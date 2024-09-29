@@ -29,9 +29,24 @@ function showTab(tabId) {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectsSection = document.getElementById('portfolio');
 
-// Initialize the tabs as hidden when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.style.display = 'none'); // Hide all tabs initially
+    function handleScroll() {
+        const sectionTop = projectsSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 50) { // Check if the section is visible
+            projectCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.5}s`; // Maintain increased delay
+                card.classList.add('animate'); // Trigger animation class
+                card.style.transform = "translateX(0)"; // Move to final position
+            });
+            window.removeEventListener('scroll', handleScroll); // Remove listener once animation triggers
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on load in case the section is already visible
 });

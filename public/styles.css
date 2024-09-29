@@ -1,11 +1,88 @@
 /* Cover Section */
-.cover-section {
-    position: relative;
-    height: 500px;
-    display: flex;
-    overflow: hidden; /* Prevent overflow */
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Diagonal cut */
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem; /* Adjust the font size as per your preference */
+    margin-bottom: 20px; /* Add space below the heading */
+    color: #64ffda; /* Adjust color for consistency */
+    margin-bottom: 100px; /* Add space below the heading */
+   
 }
+.section-heading::before {
+    content: "";
+    display: block;
+    width: 600px; /* Line width */
+    height: 2px; /* Line thickness */
+    background-color: #64ffda; /* Line color */
+    margin: 0 auto 10px; /* Margin for spacing (auto centers the line) */
+    margin: 100px auto 10px; /* Top margin for spacing above the line */
+}
+.cover-section {
+    background-image: url('prog.jpg');
+    background-size: cover; /* Ensure it covers the entire section */
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    height: 70vh; /* Full viewport height */
+    color: white; /* Change text color for visibility */
+    position: relative; /* For absolute positioning of child elements */
+}
+
+.intro {
+    width: 400px; /* Desired width for the intro box */
+    padding: 200px; /* Adjusted padding for better spacing */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    background-color: #233554;
+    border-radius: 10px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Align items in a row */
+}
+
+.profile-left {
+    margin-right: 10px; /* Space between the picture and text, reduced */
+}
+
+.profile-picture {
+    width: 70px; /* Set a smaller width for the picture */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.intro-text {
+    flex-grow: 1; /* Allow text to take the remaining space */
+    margin: 0; /* Remove default margin */
+}
+
+/* Ensure Samia Nusrat stays on one line */
+.name {
+    font-size: 18px; /* You can adjust the font size */
+    font-weight: bold;
+    display: block; /* Makes sure it stays on one line */
+}
+
+/* Contact info section to ensure phone and email are on the same line */
+.contact-info {
+    font-size: 14px; /* Adjust the size as needed */
+    margin-top: 5px; /* Add space between name and contact */
+}
+
+.contact-info span {
+    display: inline; /* Ensures phone and email are on the same line */
+}
+
+.intro h1 {
+    font-size: 1.5rem; /* Adjust font size */
+    margin: 5px 0; /* Added margin to provide a small gap */
+}
+
+.intro p {
+    margin: 2px 0; /* Reduced margin for paragraphs */
+}
+
+.social-links {
+    margin-top: 5px; /* Adjust margin for social links */
+}
+
 
 .cover-left {
     background-color: #0a192f;
@@ -102,6 +179,7 @@ footer {
     border-radius: 8px;
     position: relative;
     color: #ccd6f6;
+    transition: transform 0.3s ease; /* Add hover effect */
 }
 
 /* The circle in the timeline */
@@ -139,6 +217,11 @@ footer {
     z-index: 0;
 }
 
+/* Hover effect on timeline content (not the whole item) */
+.timeline-content:hover {
+    transform: scale(1.05); /* Enlarge content slightly */
+}
+
 /* Styling for the heading */
 .timeline-item h3 {
     color: #64ffda;
@@ -152,6 +235,27 @@ footer {
     list-style-type: disc;
     color: #ccd6f6;
 }
+
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        padding-left: 25px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 10px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     .timeline-item {
@@ -280,36 +384,54 @@ nav ul li a {
     display: block; /* Show active tab */
 }
 
-/* Projects Grid */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap */
+    justify-content: flex-start; /* Align items to the start */
+}
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Start from left */
+    }
+    100% {
+        opacity: 1; /* Fade in */
+        transform: translateX(0); /* Move to position */
+    }
 }
 
 .project-card {
     background: #112240;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #233554;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-    color: #ccd6f6;
-    text-align: center;
+    width: 250px;
+    opacity: 0; /* Start hidden */
+    animation: slideIn 1s forwards; /* Trigger animation */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    margin: 10px; /* Reduced space between cards */
+}
+.project-card.animate {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to position */
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
+.project-card img {
+    width: 100%;
+    height: 150px; /* Adjust as needed */
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 .project-card h3 {
     color: #64ffda;
+    margin-bottom: 10px;
 }
 
 .project-card p {
-    margin: 15px 0;
+    color: #8892b0;
 }
-
+/* Skills Section */
 .project-card a {
     color: #64ffda;
     text-decoration: none;
