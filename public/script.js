@@ -29,6 +29,7 @@ function showTab(tabId) {
         }
     }
 }
+
 document.addEventListener("DOMContentLoaded", function() {
     const projectCards = document.querySelectorAll('.project-card');
     const projectsSection = document.getElementById('portfolio');
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const sectionTop = projectsSection.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
-        if (sectionTop < windowHeight - 50) { // Check if the section is visible
+        if (sectionTop - windowHeight < -50) { // Adjusted calculation to trigger earlier
             projectCards.forEach((card, index) => {
                 card.style.animationDelay = `${index * 0.5}s`; // Maintain increased delay
                 card.classList.add('animate'); // Trigger animation class
@@ -50,3 +51,4 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on load in case the section is already visible
 });
+
